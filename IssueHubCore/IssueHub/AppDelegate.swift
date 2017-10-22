@@ -7,15 +7,48 @@
 //
 
 import UIKit
+import DrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var drawerController: DrawerController!
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        let leftSideDrawerVC = LeftSideDrawerViewController()
+        let centerVC = CenterViewController()
+        
+        let centerNaviController = UINavigationController(rootViewController: centerVC)
+        centerNaviController.restorationIdentifier = "CenterNavigationControllerRestorationKey"
+        
+        let leftSideDrawerNaviController = UINavigationController(rootViewController: leftSideDrawerVC)
+        leftSideDrawerNaviController.restorationIdentifier = "LeftNavigationControllerRestorationKey"
+        
+        self.drawerController = DrawerController(centerViewController:centerNaviController, leftDrawerViewController:leftSideDrawerNaviController)
+        self.drawerController.showsShadows = false
+        
+        self.drawerController.restorationIdentifier = "Drawer"
+        self.drawerController.maximumRightDrawerWidth = 200.0
+        self.drawerController.openDrawerGestureModeMask = .all
+        self.drawerController.closeDrawerGestureModeMask = .all
+        
+        self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, fractionVisible) in
+            //            let block = ExampleDrawerVisualStateManager.sharedManager.drawerVisualStateBlock(for: drawerSide)
+            //            block?(drawerController, drawerSide, fractionVisible)
+        }
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let tintColor = UIColor(red: 29 / 255.0, green: 173 / 255.0, blue: 234 / 255.0, alpha: 1.0)
+        self.window?.tintColor = tintColor
+        
+        self.window?.rootViewController = self.drawerController
+        return true
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window?.backgroundColor = UIColor.white
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 
