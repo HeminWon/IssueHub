@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.drawerController.closeDrawerGestureModeMask = .all
         
         self.drawerController.drawerVisualStateBlock = { (drawerController, drawerSide, fractionVisible) in
-            //            let block = ExampleDrawerVisualStateManager.sharedManager.drawerVisualStateBlock(for: drawerSide)
-            //            block?(drawerController, drawerSide, fractionVisible)
+            let block = DrawerVisualStateManager.sharedManager.drawerVisualStateBlock(for: drawerSide)
+            block?(drawerController, drawerSide, fractionVisible)
         }
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let tintColor = UIColor(red: 29 / 255.0, green: 173 / 255.0, blue: 234 / 255.0, alpha: 1.0)
@@ -74,6 +74,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, viewControllerWithRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
+        if let key = identifierComponents.last as? String {
+            if key == "Drawer" {
+                return self.window?.rootViewController
+            } else if key == "CenterNavigationControllerRestorationKey" {
+                return (self.window?.rootViewController as! DrawerController).centerViewController
+            } else if key == "RightNavigationControllerRestorationKey" {
+                return (self.window?.rootViewController as! DrawerController).rightDrawerViewController
+            } else if key == "LeftNavigationControllerRestorationKey" {
+                return (self.window?.rootViewController as! DrawerController).leftDrawerViewController
+            } else if key == "LeftSideDrawerController" {
+                if let leftVC = (self.window?.rootViewController as? DrawerController)?.leftDrawerViewController {
+                    if leftVC.isKind(of: UINavigationController.self) {
+                        return (leftVC as! UINavigationController).topViewController
+                    } else {
+                        return leftVC
+                    }
+                }
+            } else if key == "RightSideDrawerController" {
+                if let rightVC = (self.window?.rootViewController as? DrawerController)?.rightDrawerViewController {
+                    if rightVC.isKind(of: UINavigationController.self) {
+                        return (rightVC as! UINavigationController).topViewController
+                    } else {
+                        return rightVC
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
 }
 

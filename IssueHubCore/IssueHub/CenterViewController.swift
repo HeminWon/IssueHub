@@ -7,28 +7,31 @@
 //
 
 import UIKit
+import DrawerController
 
 class CenterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
+        self.title = "IssueHub"
+        self.setupLeftMenuButton()
     }
 
+    func setupLeftMenuButton() {
+        let leftDrawerButton = DrawerBarButtonItem(target: self, action: #selector(leftDrawerButtonPress(_:)))
+        self.navigationItem.setLeftBarButton(leftDrawerButton, animated: true)
+    }
+    
+    // MARK: - event response
+    
+    @objc func leftDrawerButtonPress(_ sender: AnyObject?) {
+        self.evo_drawerController?.toggleDrawerSide(.left, animated: true, completion: nil)
+    }
+    
+    // MARK: -
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -12,7 +12,8 @@ class LeftSideDrawerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor.lightGray
+        self.title = "Left Drawer"
     }
 
     override func didReceiveMemoryWarning() {

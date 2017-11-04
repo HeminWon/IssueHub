@@ -19,6 +19,7 @@
 		A42F3F7C1F9C44C400FACEFB /* IssueHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F3F7B1F9C44C400FACEFB /* IssueHubUITests.swift */; };
 		A42F3F8C1F9C78CB00FACEFB /* LeftSideDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F3F8B1F9C78CB00FACEFB /* LeftSideDrawerViewController.swift */; };
 		A42F3F8F1F9C794A00FACEFB /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42F3F8E1F9C794A00FACEFB /* CenterViewController.swift */; };
+		A49F790D1FADC11000267EFA /* DrawerVisualStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F790C1FADC11000267EFA /* DrawerVisualStateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A42F3F7D1F9C44C400FACEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42F3F8B1F9C78CB00FACEFB /* LeftSideDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideDrawerViewController.swift; sourceTree = "<group>"; };
 		A42F3F8E1F9C794A00FACEFB /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		A49F790C1FADC11000267EFA /* DrawerVisualStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerVisualStateManager.swift; sourceTree = "<group>"; };
 		A79DDF4F089BAE1BE1F4BEE9 /* Pods_IssueHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88706CA073636AF3F7B4962 /* Pods-IssueHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IssueHub/Pods-IssueHub.debug.xcconfig"; sourceTree = "<group>"; };
 		D9F3B188D7BC89256A134C0B /* Pods-IssueHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueHubUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IssueHubUITests/Pods-IssueHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				A42F3F5D1F9C44C400FACEFB /* ViewController.swift */,
 				A42F3F8E1F9C794A00FACEFB /* CenterViewController.swift */,
 				A42F3F8B1F9C78CB00FACEFB /* LeftSideDrawerViewController.swift */,
+				A49F790C1FADC11000267EFA /* DrawerVisualStateManager.swift */,
 				A42F3F5F1F9C44C400FACEFB /* Main.storyboard */,
 				A42F3F621F9C44C400FACEFB /* Assets.xcassets */,
 				A42F3F641F9C44C400FACEFB /* LaunchScreen.storyboard */,
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49F790D1FADC11000267EFA /* DrawerVisualStateManager.swift in Sources */,
 				A42F3F5E1F9C44C400FACEFB /* ViewController.swift in Sources */,
 				A42F3F8F1F9C794A00FACEFB /* CenterViewController.swift in Sources */,
 				A42F3F5C1F9C44C400FACEFB /* AppDelegate.swift in Sources */,
