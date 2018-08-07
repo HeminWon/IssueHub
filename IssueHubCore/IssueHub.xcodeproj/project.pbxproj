@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		A42ABC682119C31100B33FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC672119C31100B33FCC /* AppDelegate.swift */; };
 		A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC692119C31100B33FCC /* ViewController.swift */; };
-		A42ABC6D2119C31100B33FCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42ABC6B2119C31100B33FCC /* Main.storyboard */; };
 		A42ABC6F2119C31200B33FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42ABC6E2119C31200B33FCC /* Assets.xcassets */; };
-		A42ABC722119C31200B33FCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42ABC702119C31200B33FCC /* LaunchScreen.storyboard */; };
 		A42ABC7D2119C31200B33FCC /* IssueHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC7C2119C31200B33FCC /* IssueHubTests.swift */; };
 		A42ABC882119C31200B33FCC /* IssueHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC872119C31200B33FCC /* IssueHubUITests.swift */; };
 /* End PBXBuildFile section */
@@ -37,9 +35,7 @@
 		A42ABC642119C31100B33FCC /* IssueHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42ABC672119C31100B33FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42ABC692119C31100B33FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A42ABC6C2119C31100B33FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A42ABC6E2119C31200B33FCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A42ABC712119C31200B33FCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42ABC732119C31200B33FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A42ABC782119C31200B33FCC /* IssueHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssueHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42ABC7C2119C31200B33FCC /* IssueHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueHubTests.swift; sourceTree = "<group>"; };
@@ -99,9 +95,7 @@
 			children = (
 				A42ABC672119C31100B33FCC /* AppDelegate.swift */,
 				A42ABC692119C31100B33FCC /* ViewController.swift */,
-				A42ABC6B2119C31100B33FCC /* Main.storyboard */,
 				A42ABC6E2119C31200B33FCC /* Assets.xcassets */,
-				A42ABC702119C31200B33FCC /* LaunchScreen.storyboard */,
 				A42ABC732119C31200B33FCC /* Info.plist */,
 			);
 			path = IssueHub;
@@ -229,9 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42ABC722119C31200B33FCC /* LaunchScreen.storyboard in Resources */,
 				A42ABC6F2119C31200B33FCC /* Assets.xcassets in Resources */,
-				A42ABC6D2119C31100B33FCC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +283,6 @@
 			targetProxy = A42ABC842119C31200B33FCC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A42ABC6B2119C31100B33FCC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A42ABC6C2119C31100B33FCC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A42ABC702119C31200B33FCC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A42ABC712119C31200B33FCC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A42ABC8A2119C31200B33FCC /* Debug */ = {
