@@ -13,6 +13,8 @@
 		A42ABC7D2119C31200B33FCC /* IssueHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC7C2119C31200B33FCC /* IssueHubTests.swift */; };
 		A42ABC882119C31200B33FCC /* IssueHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC872119C31200B33FCC /* IssueHubUITests.swift */; };
 		A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961C8211EA49900C1B0CF /* LoginViewController.swift */; };
+		A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961CA211EC0FA00C1B0CF /* Const.swift */; };
+		A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		A42ABC872119C31200B33FCC /* IssueHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueHubUITests.swift; sourceTree = "<group>"; };
 		A42ABC892119C31200B33FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4A961C8211EA49900C1B0CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A4A961CA211EC0FA00C1B0CF /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				A42ABC672119C31100B33FCC /* AppDelegate.swift */,
 				A42ABC692119C31100B33FCC /* ViewController.swift */,
 				A4A961C8211EA49900C1B0CF /* LoginViewController.swift */,
+				A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */,
+				A4A961CA211EC0FA00C1B0CF /* Const.swift */,
 				A42ABC6E2119C31200B33FCC /* Assets.xcassets */,
 				A42ABC732119C31200B33FCC /* Info.plist */,
 			);
@@ -252,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */,
+				A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */,
+				A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */,
 				A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */,
 				A42ABC682119C31100B33FCC /* AppDelegate.swift in Sources */,
 			);
