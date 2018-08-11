@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont.boldSystemFont(ofSize: 33.0)
         titleLabel.sizeToFit()
-        titleLabel.center = CGPoint(x: LENGTH_ADAPTER(length: 130.0), y: 110.0)
+        titleLabel.center = CGPoint(x: LENGTH_ADAPTER(length: 130.0), y: LENGTH_ADAPTER(length: 120))
         self.view.addSubview(titleLabel)
         
         let detailLabel = UILabel()

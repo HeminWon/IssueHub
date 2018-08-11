@@ -12,6 +12,11 @@
 		A42ABC6F2119C31200B33FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42ABC6E2119C31200B33FCC /* Assets.xcassets */; };
 		A42ABC7D2119C31200B33FCC /* IssueHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC7C2119C31200B33FCC /* IssueHubTests.swift */; };
 		A42ABC882119C31200B33FCC /* IssueHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC872119C31200B33FCC /* IssueHubUITests.swift */; };
+		A42BE187211EC9B10092966C /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42BE181211EC9B10092966C /* CustomTransitionViewController.swift */; };
+		A42BE188211EC9B10092966C /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42BE182211EC9B10092966C /* SpinerLayer.swift */; };
+		A42BE189211EC9B10092966C /* TransitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42BE183211EC9B10092966C /* TransitionButton.swift */; };
+		A42BE18A211EC9B10092966C /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42BE184211EC9B10092966C /* FadeTransition.swift */; };
+		A42BE18B211EC9B10092966C /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42BE185211EC9B10092966C /* CGRectExtension.swift */; };
 		A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961C8211EA49900C1B0CF /* LoginViewController.swift */; };
 		A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961CA211EC0FA00C1B0CF /* Const.swift */; };
 		A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */; };
@@ -46,6 +51,11 @@
 		A42ABC832119C31200B33FCC /* IssueHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssueHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42ABC872119C31200B33FCC /* IssueHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueHubUITests.swift; sourceTree = "<group>"; };
 		A42ABC892119C31200B33FCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42BE181211EC9B10092966C /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
+		A42BE182211EC9B10092966C /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
+		A42BE183211EC9B10092966C /* TransitionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionButton.swift; sourceTree = "<group>"; };
+		A42BE184211EC9B10092966C /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		A42BE185211EC9B10092966C /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		A4A961C8211EA49900C1B0CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4A961CA211EC0FA00C1B0CF /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 				A4A961C8211EA49900C1B0CF /* LoginViewController.swift */,
 				A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */,
 				A4A961CA211EC0FA00C1B0CF /* Const.swift */,
+				A42BE180211EC9B10092966C /* TransitionButton */,
 				A42ABC6E2119C31200B33FCC /* Assets.xcassets */,
 				A42ABC732119C31200B33FCC /* Info.plist */,
 			);
@@ -126,6 +137,18 @@
 				A42ABC892119C31200B33FCC /* Info.plist */,
 			);
 			path = IssueHubUITests;
+			sourceTree = "<group>";
+		};
+		A42BE180211EC9B10092966C /* TransitionButton */ = {
+			isa = PBXGroup;
+			children = (
+				A42BE181211EC9B10092966C /* CustomTransitionViewController.swift */,
+				A42BE182211EC9B10092966C /* SpinerLayer.swift */,
+				A42BE183211EC9B10092966C /* TransitionButton.swift */,
+				A42BE184211EC9B10092966C /* FadeTransition.swift */,
+				A42BE185211EC9B10092966C /* CGRectExtension.swift */,
+			);
+			path = TransitionButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42BE189211EC9B10092966C /* TransitionButton.swift in Sources */,
+				A42BE18A211EC9B10092966C /* FadeTransition.swift in Sources */,
+				A42BE187211EC9B10092966C /* CustomTransitionViewController.swift in Sources */,
 				A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */,
+				A42BE188211EC9B10092966C /* SpinerLayer.swift in Sources */,
+				A42BE18B211EC9B10092966C /* CGRectExtension.swift in Sources */,
 				A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */,
 				A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */,
 				A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */,

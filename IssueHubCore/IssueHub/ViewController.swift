@@ -16,7 +16,8 @@ class ViewController: UIViewController {
         
         
         let btn = UIButton(type:.custom)
-        btn.frame = CGRect(x: 50, y: 100, width: 300, height: 100)
+        btn.frame = CGRect(x: 0.0, y: LENGTH_ADAPTER(length: 120.0), width: 300.0, height: 100.0)
+        btn.centerX = self.view.centerX
         btn.setTitle("普通状态", for: .normal)
         btn.backgroundColor = UIColor.red
         btn.addTarget(self, action:#selector(btnAction(btn:)), for: .touchUpInside)
