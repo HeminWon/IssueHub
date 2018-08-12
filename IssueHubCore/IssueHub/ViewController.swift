@@ -28,7 +28,10 @@ class ViewController: UIViewController {
     @objc func btnAction(btn: UIButton) {
         let loginVC = LoginViewController()
         loginVC.modalPresentationStyle = .formSheet
-        
+        weak var weakLoginVC = loginVC
+        loginVC.loginCallback = { () -> () in
+            weakLoginVC?.dismiss(animated: false, completion: nil)
+        }
         self.present(loginVC, animated: true, completion: nil)
     }
 

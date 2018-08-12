@@ -20,7 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor=UIColor.white
         
         //设置root
-        let rootVC = ViewController()
+        let rootVC = LoginViewController()
+        weak var weakSelf = self
+        rootVC.loginCallback = { () -> () in
+            let rVC = ViewController()
+            weakSelf?.window!.rootViewController = rVC
+            weakSelf?.window!.makeKeyAndVisible()
+        }
+
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         

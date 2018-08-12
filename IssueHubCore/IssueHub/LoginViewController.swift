@@ -8,10 +8,11 @@
 
 import UIKit
 
-
-
 class LoginViewController: UIViewController {
 
+    typealias callback = () -> ()
+    var loginCallback : callback?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
@@ -54,10 +55,17 @@ class LoginViewController: UIViewController {
             sleep(3) // 3: Do your networking task or background work here.
             
             DispatchQueue.main.async(execute: { () -> Void in
+                weak var weakSelf = self
                 btn.stopAnimation(animationStyle: .expand, revertAfterDelay: TimeInterval(MAXFLOAT), completion: {
-                    //
+                    if (weakSelf?.loginCallback != nil) {
+                        weakSelf?.loginCallback!()
+                    }
                 })
             })
         })
+    }
+    
+    deinit {
+        print(" login view had been destoryed ")
     }
 }
