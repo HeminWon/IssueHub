@@ -21,6 +21,8 @@
 		A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961C8211EA49900C1B0CF /* LoginViewController.swift */; };
 		A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961CA211EC0FA00C1B0CF /* Const.swift */; };
 		A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */; };
+		A4B94A7B212052B500E8C4E2 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B94A7A212052B500E8C4E2 /* Secrets.swift */; };
+		A4B94A7F21207C6D00E8C4E2 /* UIAlertAction+Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B94A7E21207C6D00E8C4E2 /* UIAlertAction+Issue.swift */; };
 		C52B7D23257E3CC70A8E20B3 /* Pods_IssueHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF9FA47D5019506234122228 /* Pods_IssueHub.framework */; };
 		F37535470580F91E2CF7E5A1 /* Pods_IssueHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EE586AFB588051AA584A85 /* Pods_IssueHubUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +70,8 @@
 		A4A961C8211EA49900C1B0CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4A961CA211EC0FA00C1B0CF /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Positioning.swift"; sourceTree = "<group>"; };
+		A4B94A7A212052B500E8C4E2 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A4B94A7E21207C6D00E8C4E2 /* UIAlertAction+Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Issue.swift"; sourceTree = "<group>"; };
 		AB49A696CC562DBE98E1D427 /* Pods_IssueHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA887006E8DED0EF2DDB688F /* Pods-IssueHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueHubUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IssueHubUITests/Pods-IssueHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF9FA47D5019506234122228 /* Pods_IssueHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssueHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +157,9 @@
 				A42ABC692119C31100B33FCC /* ViewController.swift */,
 				A4A961C8211EA49900C1B0CF /* LoginViewController.swift */,
 				A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */,
+				A4B94A7E21207C6D00E8C4E2 /* UIAlertAction+Issue.swift */,
 				A4A961CA211EC0FA00C1B0CF /* Const.swift */,
+				A4B94A7A212052B500E8C4E2 /* Secrets.swift */,
 				A42BE180211EC9B10092966C /* TransitionButton */,
 				A42ABC6E2119C31200B33FCC /* Assets.xcassets */,
 				A42ABC732119C31200B33FCC /* Info.plist */,
@@ -407,8 +413,10 @@
 				A42BE18B211EC9B10092966C /* CGRectExtension.swift in Sources */,
 				A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */,
 				A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */,
+				A4B94A7F21207C6D00E8C4E2 /* UIAlertAction+Issue.swift in Sources */,
 				A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */,
 				A42ABC682119C31100B33FCC /* AppDelegate.swift in Sources */,
+				A4B94A7B212052B500E8C4E2 /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

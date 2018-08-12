@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import AuthenticationServices
+
+private let callbackURLScheme = "issuehub://auth"
+private let loginURL = URL(string: "https://github.com/login/oauth/authorize?client_id=\(Secrets.GitHub.clientId)&scope=user+repo+notifications")!
 
 class LoginViewController: UIViewController {
 
     typealias callback = () -> ()
     var loginCallback : callback?
+    
+    @available(iOS 12.0, *)
+    private var authSession: ASWebAuthenticationSession? {
+        get {
+            return _authSession as? ASWebAuthenticationSession
+        }
+        set {
+            _authSession = newValue
+        }
+    }
+    private var _authSession: Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,22 +62,51 @@ class LoginViewController: UIViewController {
     }
     
     @objc func transitionAction(_ btn: TransitionButton) {
-        btn.startAnimation()
-        let qualityOfServiceClass = DispatchQoS.QoSClass.background
-        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-        backgroundQueue.async(execute: {
+        
+        self.authSession = ASWebAuthenticationSession(url: loginURL, callbackURLScheme: callbackURLScheme, completionHandler: {(callbackUrl, error) in
+            guard error == nil, let callbackUrl = callbackUrl else {
+                switch error! {
+                case ASWebAuthenticationSessionError.canceledLogin:
+                    break
+                default:
+                    self.handleError()
+                }
+                return
+            }
+            print(callbackUrl)
             
-            sleep(3) // 3: Do your networking task or background work here.
-            
-            DispatchQueue.main.async(execute: { () -> Void in
-                weak var weakSelf = self
-                btn.stopAnimation(animationStyle: .expand, revertAfterDelay: TimeInterval(MAXFLOAT), completion: {
-                    if (weakSelf?.loginCallback != nil) {
-                        weakSelf?.loginCallback!()
-                    }
+            btn.startAnimation()
+            let qualityOfServiceClass = DispatchQoS.QoSClass.background
+            let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+            backgroundQueue.async(execute: {
+                
+                sleep(3) // 3: Do your networking task or background work here.
+                DispatchQueue.main.async(execute: { () -> Void in
+                    weak var weakSelf = self
+                    btn.stopAnimation(animationStyle: .expand, revertAfterDelay: TimeInterval(MAXFLOAT), completion: {
+                        if (weakSelf?.loginCallback != nil) {
+                            weakSelf?.loginCallback!()
+                        }
+                    })
+                    self.handleError()
                 })
             })
         })
+        self.authSession?.start()
+        
+    }
+    
+    private func handleError() {
+        
+        let alert = UIAlertController(
+            title: NSLocalizedString("Error", comment: ""),
+            message: NSLocalizedString("There was an error signing in to GitHub. Please try again.", comment: ""),
+            preferredStyle: .alert
+        )
+//        let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+//        })
+        alert.addAction(.ok())
+        present(alert, animated: true)
     }
     
     deinit {
