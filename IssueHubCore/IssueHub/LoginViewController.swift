@@ -88,7 +88,6 @@ class LoginViewController: UIViewController {
                             weakSelf?.loginCallback!()
                         }
                     })
-                    self.handleError()
                 })
             })
         })
