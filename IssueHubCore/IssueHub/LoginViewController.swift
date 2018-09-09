@@ -10,6 +10,7 @@ import UIKit
 import AuthenticationServices
 import GitHubAPI
 import GitHubSession
+import TransitionButton
 
 private let callbackURLScheme = "issuehub://auth"
 private let loginURL = URL(string: "https://github.com/login/oauth/authorize?client_id=\(Secrets.GitHub.clientId)&scope=user+repo+notifications")!
@@ -90,6 +91,7 @@ class LoginViewController: UIViewController, GitHubSessionListener {
                 return
             }
             print(callbackUrl)
+            self.sessionManager?.receivedCodeRedirect(url: callbackUrl)
             
             btn.startAnimation()
             let qualityOfServiceClass = DispatchQoS.QoSClass.background
