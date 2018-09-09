@@ -8,14 +8,19 @@
 
 import UIKit
 import AuthenticationServices
+import GitHubAPI
+import GitHubSession
 
 private let callbackURLScheme = "issuehub://auth"
 private let loginURL = URL(string: "https://github.com/login/oauth/authorize?client_id=\(Secrets.GitHub.clientId)&scope=user+repo+notifications")!
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GitHubSessionListener {
 
     typealias callback = () -> ()
     var loginCallback : callback?
+    
+    private var client: Client!
+    private var sessionManager: GitHubSessionManager?
     
     @available(iOS 12.0, *)
     private var authSession: ASWebAuthenticationSession? {
@@ -31,7 +36,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        self.setupUI()
         
+        self.sessionManager?.addListener(listener: self as GitHubSessionListener)
+    }
+    
+    // MARK: Public API
+    func config(client: Client, sessionManager: GitHubSessionManager) {
+        self.client = client
+        self.sessionManager = sessionManager
+    }
+    
+    private func setupUI() {
         let titleLabel = UILabel()
         titleLabel.text = "ISSUES"
         titleLabel.textColor = UIColor.white
@@ -106,6 +122,18 @@ class LoginViewController: UIViewController {
 //        })
         alert.addAction(.ok())
         present(alert, animated: true)
+    }
+    
+    func didReceiveRedirect(manager: GitHubSessionManager, code: String) {
+        //
+    }
+    
+    func didFocus(manager: GitHubSessionManager, userSession: GitHubUserSession, dismiss: Bool) {
+        //
+    }
+    
+    func didLogout(manager: GitHubSessionManager) {
+        //
     }
     
     deinit {

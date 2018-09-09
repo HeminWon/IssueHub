@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		34FDA7BE907BF5E57A1F8179 /* Pods_IssueHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB49A696CC562DBE98E1D427 /* Pods_IssueHubTests.framework */; };
+		A4075EFA21452CC5006F1A5A /* RootNavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075EF921452CC5006F1A5A /* RootNavigationManager.swift */; };
+		A4075EFC21453EE3006F1A5A /* Alamofire+GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075EFB21453EE3006F1A5A /* Alamofire+GithubAPI.swift */; };
+		A4075EFE21453F36006F1A5A /* GithubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075EFD21453F36006F1A5A /* GithubClient.swift */; };
+		A4075F01214548B2006F1A5A /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F00214548B2006F1A5A /* BookmarkStore.swift */; };
+		A4075F0421454925006F1A5A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0321454925006F1A5A /* Store.swift */; };
+		A4075F0621454969006F1A5A /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0521454969006F1A5A /* Bookmark.swift */; };
+		A4075F0921454A2A006F1A5A /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0821454A2A006F1A5A /* NotificationType.swift */; };
+		A4075F0C21454AA3006F1A5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0B21454AA3006F1A5A /* Constants.swift */; };
+		A4075F0E21454AE1006F1A5A /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0D21454AE1006F1A5A /* Filterable.swift */; };
 		A42ABC682119C31100B33FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC672119C31100B33FCC /* AppDelegate.swift */; };
 		A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC692119C31100B33FCC /* ViewController.swift */; };
 		A42ABC6F2119C31200B33FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42ABC6E2119C31200B33FCC /* Assets.xcassets */; };
@@ -51,6 +60,15 @@
 		7FA4C3448C34BF2ACF415F15 /* Pods-IssueHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IssueHub/Pods-IssueHub.debug.xcconfig"; sourceTree = "<group>"; };
 		881AFCA8F6BE916B44B22FBA /* Pods-IssueHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueHubTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IssueHubTests/Pods-IssueHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91A2C1591D3B7407CE22C896 /* Pods-IssueHubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssueHubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IssueHubTests/Pods-IssueHubTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4075EF921452CC5006F1A5A /* RootNavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationManager.swift; sourceTree = "<group>"; };
+		A4075EFB21453EE3006F1A5A /* Alamofire+GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+GithubAPI.swift"; sourceTree = "<group>"; };
+		A4075EFD21453F36006F1A5A /* GithubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubClient.swift; sourceTree = "<group>"; };
+		A4075F00214548B2006F1A5A /* BookmarkStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
+		A4075F0321454925006F1A5A /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		A4075F0521454969006F1A5A /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		A4075F0821454A2A006F1A5A /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		A4075F0B21454AA3006F1A5A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A4075F0D21454AE1006F1A5A /* Filterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
 		A42ABC642119C31100B33FCC /* IssueHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42ABC672119C31100B33FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42ABC692119C31100B33FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +146,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A4075EF821452660006F1A5A /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				A4075EF921452CC5006F1A5A /* RootNavigationManager.swift */,
+				A4075EFB21453EE3006F1A5A /* Alamofire+GithubAPI.swift */,
+				A4075EFD21453F36006F1A5A /* GithubClient.swift */,
+			);
+			path = Systems;
+			sourceTree = "<group>";
+		};
+		A4075EFF21454825006F1A5A /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				A4075F00214548B2006F1A5A /* BookmarkStore.swift */,
+				A4075F0521454969006F1A5A /* Bookmark.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		A4075F0221454910006F1A5A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A4075F0321454925006F1A5A /* Store.swift */,
+				A4075F0D21454AE1006F1A5A /* Filterable.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A4075F0721454A08006F1A5A /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A4075F0821454A2A006F1A5A /* NotificationType.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		A4075F0A21454A89006F1A5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4075F0B21454AA3006F1A5A /* Constants.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A42ABC5B2119C31100B33FCC = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +215,11 @@
 		A42ABC662119C31100B33FCC /* IssueHub */ = {
 			isa = PBXGroup;
 			children = (
+				A4075F0A21454A89006F1A5A /* Views */,
+				A4075F0721454A08006F1A5A /* Notifications */,
+				A4075F0221454910006F1A5A /* Utility */,
+				A4075EFF21454825006F1A5A /* Bookmark */,
+				A4075EF821452660006F1A5A /* Systems */,
 				A42ABC672119C31100B33FCC /* AppDelegate.swift */,
 				A42ABC692119C31100B33FCC /* ViewController.swift */,
 				A4A961C8211EA49900C1B0CF /* LoginViewController.swift */,
@@ -389,6 +456,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-IssueHub/Pods-IssueHub-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/FlatCache/FlatCache.framework",
 				"${BUILT_PRODUCTS_DIR}/GitHubAPI/GitHubAPI.framework",
 				"${BUILT_PRODUCTS_DIR}/GitHubSession/GitHubSession.framework",
 			);
@@ -396,6 +464,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlatCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GitHubAPI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GitHubSession.framework",
 			);
@@ -412,17 +481,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42BE189211EC9B10092966C /* TransitionButton.swift in Sources */,
+				A4075F01214548B2006F1A5A /* BookmarkStore.swift in Sources */,
 				A42BE18A211EC9B10092966C /* FadeTransition.swift in Sources */,
+				A4075EFA21452CC5006F1A5A /* RootNavigationManager.swift in Sources */,
 				A42BE187211EC9B10092966C /* CustomTransitionViewController.swift in Sources */,
 				A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */,
 				A42BE188211EC9B10092966C /* SpinerLayer.swift in Sources */,
 				A42BE18B211EC9B10092966C /* CGRectExtension.swift in Sources */,
 				A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */,
+				A4075EFC21453EE3006F1A5A /* Alamofire+GithubAPI.swift in Sources */,
+				A4075F0421454925006F1A5A /* Store.swift in Sources */,
 				A4A961CD211EC42500C1B0CF /* UIView+Positioning.swift in Sources */,
 				A4B94A7F21207C6D00E8C4E2 /* UIAlertAction+Issue.swift in Sources */,
 				A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */,
+				A4075EFE21453F36006F1A5A /* GithubClient.swift in Sources */,
+				A4075F0C21454AA3006F1A5A /* Constants.swift in Sources */,
+				A4075F0E21454AE1006F1A5A /* Filterable.swift in Sources */,
 				A42ABC682119C31100B33FCC /* AppDelegate.swift in Sources */,
+				A4075F0921454A2A006F1A5A /* NotificationType.swift in Sources */,
 				A4B94A7B212052B500E8C4E2 /* Secrets.swift in Sources */,
+				A4075F0621454969006F1A5A /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

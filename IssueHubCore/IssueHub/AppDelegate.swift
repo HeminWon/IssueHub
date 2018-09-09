@@ -7,29 +7,26 @@
 //
 
 import UIKit
+import GitHubSession
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let sessionManager = GitHubSessionManager()
+    
+    private lazy var rootNavigationManager: RootNavigationManager = {
+        return RootNavigationManager(sessionManager: self.sessionManager, window: self.window!)
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window=UIWindow(frame:UIScreen.main.bounds)
         self.window!.backgroundColor=UIColor.white
         
-        //设置root
-        let rootVC = LoginViewController()
-        weak var weakSelf = self
-        rootVC.loginCallback = { () -> () in
-            let rVC = ViewController()
-            weakSelf?.window!.rootViewController = rVC
-            weakSelf?.window!.makeKeyAndVisible()
-        }
-
-        self.window!.rootViewController = rootVC
-        self.window!.makeKeyAndVisible()
+        let focusedSession = sessionManager.focusedUserSession
+        self.rootNavigationManager.resetRootViewController(userSession: focusedSession)
+        
         
        return true
     }

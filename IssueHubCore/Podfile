@@ -9,6 +9,7 @@ end
 def session_pods
   pod 'GitHubAPI', :path => 'Local Pods/GitHubAPI'
   pod 'GitHubSession', :path => 'Local Pods/GitHubSession'
+  pod 'FlatCache', :path => 'Local Pods/FlatCache'
 end
 
 target 'IssueHub' do
