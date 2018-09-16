@@ -16,6 +16,8 @@ public protocol GitHubSessionListener: class {
 
 public class GitHubSessionManager: NSObject {
 
+    public static let defaultManager = GitHubSessionManager()
+    
     private class ListenerWrapper: NSObject {
         weak var listener: GitHubSessionListener?
     }
@@ -31,7 +33,7 @@ public class GitHubSessionManager: NSObject {
     private let _userSessions = NSMutableOrderedSet()
     private let defaults: UserDefaults
 
-    public override init() {
+    private override init() {
         let nonSharedDefaults = UserDefaults.standard
         defaults = UserDefaults(suiteName: "group.com.whoisryannystrom.freetime") ?? .standard
 

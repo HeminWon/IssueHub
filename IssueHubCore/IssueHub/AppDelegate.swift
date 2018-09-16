@@ -13,7 +13,7 @@ import GitHubSession
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let sessionManager = GitHubSessionManager()
+    let sessionManager = GitHubSessionManager.defaultManager
     
     private lazy var rootNavigationManager: RootNavigationManager = {
         return RootNavigationManager(sessionManager: self.sessionManager, window: self.window!)

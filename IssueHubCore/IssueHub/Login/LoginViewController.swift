@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, GitHubSessionListener {
     var loginCallback : callback?
     
     private var client: Client!
-    private var sessionManager: GitHubSessionManager?
+    private var sessionManager: GitHubSessionManager!
     
     @available(iOS 12.0, *)
     private var authSession: ASWebAuthenticationSession? {
@@ -33,6 +33,8 @@ class LoginViewController: UIViewController, GitHubSessionListener {
         }
     }
     private var _authSession: Any?
+    
+    private var transition: TransitionButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,7 @@ class LoginViewController: UIViewController, GitHubSessionListener {
                                    height: detailLabel.height)
         self.view.addSubview(detailLabel)
         
-        let transition = TransitionButton()
+        transition = TransitionButton()
         transition.frame = CGRect(x: 0.0, y: 0.0, width: 300.0, height: 50.0)
         transition.center = CGPoint(x: self.view.centerX, y: self.view.bottom - transition.height - 80.0)
         transition.cornerRadius = transition.height * 0.5
@@ -92,22 +94,7 @@ class LoginViewController: UIViewController, GitHubSessionListener {
             }
             print(callbackUrl)
             self.sessionManager?.receivedCodeRedirect(url: callbackUrl)
-            
-            btn.startAnimation()
-            let qualityOfServiceClass = DispatchQoS.QoSClass.background
-            let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-            backgroundQueue.async(execute: {
-                
-                sleep(3) // 3: Do your networking task or background work here.
-                DispatchQueue.main.async(execute: { () -> Void in
-                    weak var weakSelf = self
-                    btn.stopAnimation(animationStyle: .expand, revertAfterDelay: TimeInterval(MAXFLOAT), completion: {
-                        if (weakSelf?.loginCallback != nil) {
-                            weakSelf?.loginCallback!()
-                        }
-                    })
-                })
-            })
+          
         })
         self.authSession?.start()
         
@@ -126,8 +113,36 @@ class LoginViewController: UIViewController, GitHubSessionListener {
         present(alert, animated: true)
     }
     
+    private func finishLogin(token: String, authMethod: GitHubUserSession.AuthMethod, username: String) {
+        sessionManager.focus(
+            GitHubUserSession(token: token, authMethod: authMethod, username: username),
+            dismiss: true
+        )
+    }
+    
     func didReceiveRedirect(manager: GitHubSessionManager, code: String) {
-        //
+        transition.startAnimation()
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
+            
+            self.client.requestAccessToken(code: code) { [weak self] result in
+                switch result {
+                case .error:
+                    self?.handleError()
+                case .success(let user):
+                    self?.finishLogin(token: user.token, authMethod: .oauth, username: user.username)
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        weak var weakSelf = self
+                        self?.transition.stopAnimation(animationStyle: .expand, revertAfterDelay: TimeInterval(MAXFLOAT), completion: {
+                            if (weakSelf?.loginCallback != nil) {
+                                weakSelf?.loginCallback!()
+                            }
+                        })
+                    })
+                }
+            }
+        })
     }
     
     func didFocus(manager: GitHubSessionManager, userSession: GitHubUserSession, dismiss: Bool) {

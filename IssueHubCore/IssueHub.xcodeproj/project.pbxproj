@@ -17,6 +17,8 @@
 		A4075F0921454A2A006F1A5A /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0821454A2A006F1A5A /* NotificationType.swift */; };
 		A4075F0C21454AA3006F1A5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0B21454AA3006F1A5A /* Constants.swift */; };
 		A4075F0E21454AE1006F1A5A /* Filterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F0D21454AE1006F1A5A /* Filterable.swift */; };
+		A4075F11214561B2006F1A5A /* Client+AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F10214561B2006F1A5A /* Client+AccessToken.swift */; };
+		A4075F13214561FA006F1A5A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4075F12214561FA006F1A5A /* Result.swift */; };
 		A42ABC682119C31100B33FCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC672119C31100B33FCC /* AppDelegate.swift */; };
 		A42ABC6A2119C31100B33FCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42ABC692119C31100B33FCC /* ViewController.swift */; };
 		A42ABC6F2119C31200B33FCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42ABC6E2119C31200B33FCC /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		A4075F0821454A2A006F1A5A /* NotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 		A4075F0B21454AA3006F1A5A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4075F0D21454AE1006F1A5A /* Filterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filterable.swift; sourceTree = "<group>"; };
+		A4075F10214561B2006F1A5A /* Client+AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+AccessToken.swift"; sourceTree = "<group>"; };
+		A4075F12214561FA006F1A5A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A42ABC642119C31100B33FCC /* IssueHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssueHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42ABC672119C31100B33FCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A42ABC692119C31100B33FCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				A4075EF921452CC5006F1A5A /* RootNavigationManager.swift */,
 				A4075EFB21453EE3006F1A5A /* Alamofire+GithubAPI.swift */,
 				A4075EFD21453F36006F1A5A /* GithubClient.swift */,
+				A4075F12214561FA006F1A5A /* Result.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -158,6 +163,8 @@
 		A4075F0221454910006F1A5A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A4B94A7E21207C6D00E8C4E2 /* UIAlertAction+Issue.swift */,
+				A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */,
 				A4075F0321454925006F1A5A /* Store.swift */,
 				A4075F0D21454AE1006F1A5A /* Filterable.swift */,
 			);
@@ -175,9 +182,20 @@
 		A4075F0A21454A89006F1A5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A4B94A7A212052B500E8C4E2 /* Secrets.swift */,
 				A4075F0B21454AA3006F1A5A /* Constants.swift */,
+				A4A961CA211EC0FA00C1B0CF /* Const.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A4075F0F21456128006F1A5A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A4075F10214561B2006F1A5A /* Client+AccessToken.swift */,
+				A4A961C8211EA49900C1B0CF /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		A42ABC5B2119C31100B33FCC = {
@@ -210,13 +228,9 @@
 				A4075F0221454910006F1A5A /* Utility */,
 				A4075EFF21454825006F1A5A /* Bookmark */,
 				A4075EF821452660006F1A5A /* Systems */,
+				A4075F0F21456128006F1A5A /* Login */,
 				A42ABC672119C31100B33FCC /* AppDelegate.swift */,
 				A42ABC692119C31100B33FCC /* ViewController.swift */,
-				A4A961C8211EA49900C1B0CF /* LoginViewController.swift */,
-				A4A961CC211EC42500C1B0CF /* UIView+Positioning.swift */,
-				A4B94A7E21207C6D00E8C4E2 /* UIAlertAction+Issue.swift */,
-				A4A961CA211EC0FA00C1B0CF /* Const.swift */,
-				A4B94A7A212052B500E8C4E2 /* Secrets.swift */,
 				A42ABC6E2119C31200B33FCC /* Assets.xcassets */,
 				A42ABC732119C31200B33FCC /* Info.plist */,
 			);
@@ -459,8 +473,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4075F13214561FA006F1A5A /* Result.swift in Sources */,
 				A4075F01214548B2006F1A5A /* BookmarkStore.swift in Sources */,
 				A4075EFA21452CC5006F1A5A /* RootNavigationManager.swift in Sources */,
+				A4075F11214561B2006F1A5A /* Client+AccessToken.swift in Sources */,
 				A4A961C9211EA49900C1B0CF /* LoginViewController.swift in Sources */,
 				A4A961CB211EC0FA00C1B0CF /* Const.swift in Sources */,
 				A4075EFC21453EE3006F1A5A /* Alamofire+GithubAPI.swift in Sources */,

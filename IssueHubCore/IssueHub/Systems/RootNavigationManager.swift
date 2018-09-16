@@ -23,7 +23,7 @@ final class RootNavigationManager: GitHubSessionListener {
     }
     
     public func resetRootViewController(userSession: GitHubUserSession?) {
-        guard let userSession = userSession else {
+        guard userSession != nil else {
             
             let loginVC = newLoginViewController()
             
@@ -41,10 +41,13 @@ final class RootNavigationManager: GitHubSessionListener {
             return
         }
         
-        print(userSession)
+        let rVC = ViewController()
+        rVC.sessionManager = self.sessionManager
+        self.window!.rootViewController = rVC
+        self.window!.makeKeyAndVisible()
     }
     
-    
+
     // MARK: GitHubSessionListener
     func didReceiveRedirect(manager: GitHubSessionManager, code: String) {
         //
