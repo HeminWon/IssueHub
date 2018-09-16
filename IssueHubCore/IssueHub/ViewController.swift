@@ -52,5 +52,9 @@ class ViewController: UIViewController {
         //
         sessionManager.logout()
     }
+    
+    deinit {
+        print(" view had been destoryed ")
+    }
 }
 

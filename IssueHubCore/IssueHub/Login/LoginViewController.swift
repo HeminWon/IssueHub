@@ -81,19 +81,19 @@ class LoginViewController: UIViewController, GitHubSessionListener {
     }
     
     @objc func transitionAction(_ btn: TransitionButton) {
-        
+        weak var weakSelf = self
         self.authSession = ASWebAuthenticationSession(url: loginURL, callbackURLScheme: callbackURLScheme, completionHandler: {(callbackUrl, error) in
             guard error == nil, let callbackUrl = callbackUrl else {
                 switch error! {
                 case ASWebAuthenticationSessionError.canceledLogin:
                     break
                 default:
-                    self.handleError()
+                    weakSelf?.handleError()
                 }
                 return
             }
             print(callbackUrl)
-            self.sessionManager?.receivedCodeRedirect(url: callbackUrl)
+            weakSelf?.sessionManager?.receivedCodeRedirect(url: callbackUrl)
           
         })
         self.authSession?.start()
@@ -125,15 +125,14 @@ class LoginViewController: UIViewController, GitHubSessionListener {
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
-            
+            weak var weakSelf = self
             self.client.requestAccessToken(code: code) { [weak self] result in
                 switch result {
                 case .error:
-                    self?.handleError()
+                    weakSelf?.handleError()
                 case .success(let user):
-                    self?.finishLogin(token: user.token, authMethod: .oauth, username: user.username)
+                    weakSelf?.finishLogin(token: user.token, authMethod: .oauth, username: user.username)
                     DispatchQueue.main.async(execute: { () -> Void in
-                        weak var weakSelf = self
                         self?.transition.stopAnimation(animationStyle: .expand, revertAfterDelay: TimeInterval(MAXFLOAT), completion: {
                             if (weakSelf?.loginCallback != nil) {
                                 weakSelf?.loginCallback!()

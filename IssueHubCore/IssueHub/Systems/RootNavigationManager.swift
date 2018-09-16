@@ -58,7 +58,7 @@ final class RootNavigationManager: GitHubSessionListener {
     }
     
     func didLogout(manager: GitHubSessionManager) {
-        //
+        self.resetRootViewController(userSession: self.sessionManager.focusedUserSession)
     }
     
 
